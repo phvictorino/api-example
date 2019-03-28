@@ -1,6 +1,7 @@
 # API básica para estudos e início de projetos
 
- 1. Renomear o arquivo `.env.example` para `.env` e alterar para as configurações desejadas
+ 1. Renomear o arquivo `.env.example` para `.env` 
+ 2. Alterar para as configurações desejadas
 
 Para rodar, basta digitar o comando `npm run dev`
 
