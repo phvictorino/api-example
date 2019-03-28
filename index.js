@@ -11,8 +11,10 @@ app.post("/usuarios", (req, res) => {
   res.json(req.body.nome);
 });
 
-app.listen(process.env.PORT, () => {
-  console.log("API rodando na porta " + process.env.PORT);
+let port = process.env.PORT ? process.env.PORT : 3000;
+
+app.listen(port || 3000, () => {
+  console.log("API rodando na porta " + port);
 });
 
 export default app;
