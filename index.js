@@ -1,18 +1,18 @@
-const express = require("express");
+import express from "express";
+import bodyparser from "body-parser";
+import dotenv from 'dotenv'
+dotenv.config()
 
 const app = express();
 
-let usuario = {
-  nome: "João",
-  curso: "EC"
-};
+app.use(bodyparser.json());
 
-app.get("/usuarios", function(req, res) {
-  res.json(usuario);
+app.post("/usuarios", (req, res) => {
+  res.json(req.body.nome);
 });
 
-app.post("/", function(req, res) {
-  res.json({message: "só o /"});
-});1
+app.listen(process.env.PORT, () => {
+  console.log("API rodando na porta " + process.env.PORT);
+});
 
-app.listen(3000);
+export default app;
